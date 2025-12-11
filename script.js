@@ -20,11 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
       description: 'Suite of scripts and workflows to automate user onboarding and AD auditing.',
       techs: ['PowerShell', 'n8n', 'Automation']
     },
-    {
-        title: 'Project Manager',
-        description: 'A full-stack application to manage projects and tasks with team collaboration features.',
-        techs: ['React', 'Node.js', 'MongoDB', 'Express']
-    }
   ];
 
   const techContainer = document.getElementById('tech-stack-container');

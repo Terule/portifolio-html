@@ -1,4 +1,3 @@
-/* --- RESET & VARIÁVEIS --- */
 :root {
   --slate-950: #020617;
   --slate-900: #0f172a;
@@ -40,14 +39,12 @@ a {
   color: inherit;
 }
 
-/* --- UTILITÁRIOS --- */
 .container {
   max-width: 48rem;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
-/* --- HEADER --- */
 header {
   position: fixed;
   top: 0;
@@ -88,11 +85,10 @@ header {
   color: transparent;
 }
 
-/* --- CORREÇÃO DO NAV (Ícones alinhados) --- */
 .nav-btn {
-  display: flex; /* Garante flexbox */
-  flex-direction: row; /* Força linha horizontal */
-  align-items: center; /* Centraliza verticalmente */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: 0.375rem;
@@ -111,7 +107,7 @@ header {
 .nav-btn svg {
   width: 1rem;
   height: 1rem;
-  min-width: 1rem; /* Impede encolhimento */
+  min-width: 1rem;
   fill: currentColor;
 }
 
@@ -119,7 +115,6 @@ header {
   fill: none;
 }
 
-/* Responsividade do Texto dos Botões */
 .btn-text-full { display: none; }
 .btn-text-short { display: inline; }
 
@@ -128,7 +123,6 @@ header {
   .btn-text-short { display: none; }
 }
 
-/* --- HERO SECTION --- */
 main {
   padding-top: 8rem;
   padding-bottom: 5rem;
@@ -179,7 +173,6 @@ h1 {
   .hero-text { font-size: 1.125rem; }
 }
 
-/* --- BADGES (Tech Stack) --- */
 #tech-stack-section { margin-bottom: 5rem; }
 
 .section-title {
@@ -193,7 +186,6 @@ h1 {
   display: block;
 }
 
-/* Nova classe para substituir 'flex flex-wrap gap-2' do JS */
 .tech-badges-container {
   display: flex;
   flex-wrap: wrap;
@@ -226,7 +218,6 @@ h1 {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-/* --- PROJETOS & ANIMAÇÃO PING (CORREÇÃO DE BUG VISUAL) --- */
 .projects-header {
   display: flex;
   align-items: center;
@@ -241,7 +232,6 @@ h1 {
   color: var(--slate-100);
 }
 
-/* ESTE ERA O PROBLEMA: Faltava position: relative aqui */
 .ping-wrapper {
   position: relative;
   display: inline-flex;
@@ -278,7 +268,6 @@ h1 {
   }
 }
 
-/* --- BOTÕES DE NAVEGAÇÃO --- */
 .nav-arrow-btn {
   display: inline-flex;
   align-items: center;
@@ -304,7 +293,6 @@ h1 {
   height: 1.25rem;
 }
 
-/* --- CARROSSEL --- */
 .carousel {
   display: flex;
   gap: 1rem;
@@ -355,7 +343,6 @@ h1 {
   line-height: 1.6;
 }
 
-/* Nova classe para substituir 'flex flex-wrap gap-2 mt-6' do JS */
 .project-badges-container {
   display: flex;
   flex-wrap: wrap;
@@ -376,7 +363,6 @@ h1 {
   .mini-badge { font-size: 0.75rem; }
 }
 
-/* --- FOOTER --- */
 footer {
   margin-top: 6rem;
   border-top: 1px solid var(--slate-800);
