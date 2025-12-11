@@ -1,3 +1,4 @@
+/* --- RESET & VARIÁVEIS --- */
 :root {
   --slate-950: #020617;
   --slate-900: #0f172a;
@@ -39,19 +40,14 @@ a {
   color: inherit;
 }
 
+/* --- UTILITÁRIOS --- */
 .container {
   max-width: 48rem;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
-.flex { display: flex; }
-.items-center { align-items: center; }
-.justify-between { justify-content: space-between; }
-.flex-wrap { flex-wrap: wrap; }
-.gap-2 { gap: 0.5rem; }
-.gap-3 { gap: 0.75rem; }
-
+/* --- HEADER --- */
 header {
   position: fixed;
   top: 0;
@@ -71,6 +67,12 @@ header {
   margin: 0 auto;
 }
 
+.header-content nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .logo {
   font-family: var(--font-roboto);
   font-weight: 700;
@@ -86,10 +88,11 @@ header {
   color: transparent;
 }
 
+/* --- CORREÇÃO DO NAV (Ícones alinhados) --- */
 .nav-btn {
-  display: flex; /* Força flexbox */
-  flex-direction: row; /* Força alinhamento horizontal (ícone ao lado do texto) */
-  align-items: center;
+  display: flex; /* Garante flexbox */
+  flex-direction: row; /* Força linha horizontal */
+  align-items: center; /* Centraliza verticalmente */
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: 0.375rem;
@@ -97,7 +100,7 @@ header {
   font-weight: 500;
   color: var(--slate-400);
   transition: all 0.2s;
-  white-space: nowrap; /* Impede quebra de linha */
+  white-space: nowrap;
 }
 
 .nav-btn:hover {
@@ -108,7 +111,7 @@ header {
 .nav-btn svg {
   width: 1rem;
   height: 1rem;
-  min-width: 1rem; /* Impede que o ícone esmague */
+  min-width: 1rem; /* Impede encolhimento */
   fill: currentColor;
 }
 
@@ -116,7 +119,7 @@ header {
   fill: none;
 }
 
-/* Controle de texto responsivo */
+/* Responsividade do Texto dos Botões */
 .btn-text-full { display: none; }
 .btn-text-short { display: inline; }
 
@@ -125,6 +128,7 @@ header {
   .btn-text-short { display: none; }
 }
 
+/* --- HERO SECTION --- */
 main {
   padding-top: 8rem;
   padding-bottom: 5rem;
@@ -175,6 +179,7 @@ h1 {
   .hero-text { font-size: 1.125rem; }
 }
 
+/* --- BADGES (Tech Stack) --- */
 #tech-stack-section { margin-bottom: 5rem; }
 
 .section-title {
@@ -186,6 +191,13 @@ h1 {
   color: var(--slate-500);
   margin-bottom: 1.5rem;
   display: block;
+}
+
+/* Nova classe para substituir 'flex flex-wrap gap-2' do JS */
+.tech-badges-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .badge {
@@ -214,6 +226,7 @@ h1 {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
+/* --- PROJETOS & ANIMAÇÃO PING (CORREÇÃO DE BUG VISUAL) --- */
 .projects-header {
   display: flex;
   align-items: center;
@@ -228,9 +241,9 @@ h1 {
   color: var(--slate-100);
 }
 
-/* CORREÇÃO IMPORTANTE: position: relative contém a animação */
+/* ESTE ERA O PROBLEMA: Faltava position: relative aqui */
 .ping-wrapper {
-  position: relative; 
+  position: relative;
   display: inline-flex;
   width: 0.75rem;
   height: 0.75rem;
@@ -265,6 +278,7 @@ h1 {
   }
 }
 
+/* --- BOTÕES DE NAVEGAÇÃO --- */
 .nav-arrow-btn {
   display: inline-flex;
   align-items: center;
@@ -285,6 +299,12 @@ h1 {
   border-color: var(--cyan-500);
 }
 
+.nav-arrow-btn svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* --- CARROSSEL --- */
 .carousel {
   display: flex;
   gap: 1rem;
@@ -335,6 +355,14 @@ h1 {
   line-height: 1.6;
 }
 
+/* Nova classe para substituir 'flex flex-wrap gap-2 mt-6' do JS */
+.project-badges-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
 .mini-badge {
   font-size: 0.65rem;
   font-family: monospace;
@@ -348,6 +376,7 @@ h1 {
   .mini-badge { font-size: 0.75rem; }
 }
 
+/* --- FOOTER --- */
 footer {
   margin-top: 6rem;
   border-top: 1px solid var(--slate-800);

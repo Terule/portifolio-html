@@ -20,12 +20,19 @@ document.addEventListener('DOMContentLoaded', () => {
       description: 'Suite of scripts and workflows to automate user onboarding and AD auditing.',
       techs: ['PowerShell', 'n8n', 'Automation']
     },
+    {
+        title: 'Project Manager',
+        description: 'A full-stack application to manage projects and tasks with team collaboration features.',
+        techs: ['React', 'Node.js', 'MongoDB', 'Express']
+    }
   ];
 
   const techContainer = document.getElementById('tech-stack-container');
   
   if(techContainer) {
-    techContainer.innerHTML = '';
+    techContainer.classList.add('tech-badges-container'); 
+    techContainer.innerHTML = ''; 
+
     techStack.forEach(tech => {
       const badge = document.createElement('div');
       badge.className = 'badge';
@@ -37,14 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectsContainer = document.getElementById('projects-container');
 
   if(projectsContainer) {
-    projectsContainer.innerHTML = '';
+    projectsContainer.innerHTML = ''; 
     projects.forEach(project => {
-      // Criar Card
       const card = document.createElement('div');
       card.className = 'project-card';
 
-      // Conteúdo Texto
       const textDiv = document.createElement('div');
+      
       const title = document.createElement('h3');
       title.className = 'project-title';
       title.textContent = project.title;
@@ -56,10 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
       textDiv.appendChild(title);
       textDiv.appendChild(desc);
 
-      // Conteúdo Badges
       const badgesDiv = document.createElement('div');
-      badgesDiv.className = 'flex flex-wrap gap-2';
-      badgesDiv.style.marginTop = '1.5rem';
+      badgesDiv.className = 'project-badges-container'; // Nova classe CSS
 
       project.techs.forEach(t => {
         const miniBadge = document.createElement('span');
@@ -68,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
         badgesDiv.appendChild(miniBadge);
       });
 
-      // Montar Card
       card.appendChild(textDiv);
       card.appendChild(badgesDiv);
       projectsContainer.appendChild(card);
@@ -79,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextBtn = document.getElementById('next-btn');
 
   if (prevBtn && nextBtn && projectsContainer) {
-    const scrollAmount = 320;
+    const scrollAmount = 320; 
 
     prevBtn.addEventListener('click', () => {
       if (projectsContainer.scrollLeft <= 0) {
